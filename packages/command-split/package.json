@@ -1,0 +1,21 @@
+{
+  "name": "@eduardoboucas/mcli-command-split",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "esbuild main.ts --watch --outdir=dist --sourcemap --bundle --platform=node --format=esm",
+    "build": "esbuild main.ts --outdir=dist --sourcemap --bundle --minify --platform=node --format=esm",
+    "prepublish": "npm run build",
+    "postbuild": "tsc --emitDeclarationOnly --declaration"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eduardoboucas/mcli": "1.0.0",
+    "commander": "^12.1.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.7.2"
+  }
+}

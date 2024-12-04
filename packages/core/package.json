@@ -1,0 +1,29 @@
+{
+  "name": "@eduardoboucas/mcli",
+  "type": "module",
+  "version": "1.0.3",
+  "description": "",
+  "main": "dist/main.js",
+  "bin": {
+    "mcli": "./bin.mjs"
+  },
+  "scripts": {
+    "prebuild": "node --experimental-strip-types scripts/collect-remote-commands.ts package.json dist/remote-commands.json",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublish": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eduardoboucas/mcli-command-emojify": "1.0.0",
+    "@eduardoboucas/mcli-command-split": "1.0.0",
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "env-paths": "^3.0.0",
+    "tar": "^7.4.3"
+  }
+}
